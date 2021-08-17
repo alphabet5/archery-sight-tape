@@ -4,7 +4,7 @@
 
 # Prepare the sight-settings.csv
 
-From archers advantage, printing the "sight settings" and copying the values, I replaced the values into a more standardized list using `(\d+):\s(\d\.\d{3})\s` and replacing with `\1,\2\n` using sublime text.
+From [archers advantage](https://www.archersadvantageonline.com), printing the "sight settings" and copying the values, I replaced the values into a more standardized list using `(\d+):\s(\d\.\d{3})\s` and replacing with `\1,\2\n` using sublime text.
 
 
 ## Run the script.
