@@ -1,0 +1,37 @@
+---
+height:
+  help: Height of the sight to output. Default 2.5" (black gold sight)
+  type: float
+  default: 2.5
+width:
+  help: Width of the sight to output. Default .375" (black gold sight)
+  type: float
+  default: 0.375
+start:
+  help: Position "0" the top value, .269 (in) default. Typically the value at 40y.
+  type: float
+  default: 0.269
+output:
+  help: Output .svg filename. default 'sight-tape.svg'
+  type: str
+  default: sight-tape.svg
+input:
+  help: Input csv for the sight settings. Default 'sight-settings.csv'.
+  type: str
+  default: sight-settings.csv
+ppi:
+  help: Pixels per inch. Default 300
+  type: int
+  default: 300
+large-color:
+  help: Value for the 10 (y/m) line color. Default 'red'.
+  type: str
+  default: red
+medium-color:
+  help: Value for the 5 (y/m) line color. Default 'green'.
+  type: str
+  default: green
+small-color:
+  help: Value for the 1 (y/m) line color. Default 'black'.
+  type: str
+  default: black

@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:cc="http://web.resource.org/cc/" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd" xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape" version="1.1" baseProfile="full" width="{{ width }}px" height="{{ height }}px" viewBox="0 0 {{ width }} {{ height }}" preserveAspectRatio="xMinYMin meet" id="svg_document" style="zoom: 1;">
+    <rect stroke="#000000" x="0px" height="{{ height }}px" y="0px" id="rect1" stroke-width="1px" width="{{ width }}px" fill="#ffffff" transform=""></rect>
+  {% for number in numbers %}
+	<line stroke="{{ number.color }}" y1="{{ number.y }}px" id="{{ number.id }}" x1="50.000000px" stroke-width="3px" y2="{{ number.y }}px" x2="112.000000px" transform=""></line>
+	<text stroke="none" style="outline-style:none;" id="text{{ number.id }}" stroke-width="1px" x="11px" text-rendering="geometricPrecision" font-family="Helvetica" fill="#000000" font-size="20px" y="{{ number.texty }}px" transform="" text-anchor="start">{{ number.value }}</text>
+  {% endfor %}
+  {% for number in small %}
+	<line stroke="{{ number.color }}" y1="{{ number.y }}px" id="{{ number.id }}" x1="75.000000px" stroke-width="1px" y2="{{ number.y }}px" x2="112.000000px" transform=""></line>
+  {% endfor %}
+  {% for number in medium %}
+	<line stroke="{{ number.color }}" y1="{{ number.y }}px" id="{{ number.id }}" x1="65.000000px" stroke-width="2px" y2="{{ number.y }}px" x2="112.000000px" transform=""></line>
+  {% endfor %}
+</svg>
