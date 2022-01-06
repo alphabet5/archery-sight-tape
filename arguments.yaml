@@ -23,15 +23,23 @@ ppi:
   help: Pixels per inch. Default 300
   type: int
   default: 300
-large-color:
-  help: Value for the 10 (y/m) line color. Default 'red'.
+color:
+  help: Colors for the lines Large (10y/m), Medium (5y/m), Small (1y/m) in the format red,green,black
   type: str
-  default: red
-medium-color:
-  help: Value for the 5 (y/m) line color. Default 'green'.
+  default: black,black,black
+line-width:
+  help: Percent of the sight tape as width for the lines L,M,S in the format 65,55,45
   type: str
-  default: green
-small-color:
-  help: Value for the 1 (y/m) line color. Default 'black'.
+  default: 60,50,40
+line-weight:
+  help: Weight of the lines L,M,S in the format 3,2,1 in pixels.
   type: str
-  default: black
+  default: 4,3,3
+font-size:
+  help: Font size for the text.
+  type: int
+  default: 20
+font-y-offset:
+  help: Amount to offset the text in the y direction.
+  type: int
+  default: 7
