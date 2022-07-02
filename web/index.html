@@ -99,14 +99,15 @@
                 var numbers = [];
                 var medium = [];
                 var small = [];
+                var ecc = (document.getElementById("ecc-promised").value / document.getElementById("ecc-actual"));
                 for(var i = 0;i < lines.length;i++){
                     array = lines[i].split(': '),
                     distance = array[0], offset = array[1];
-                    y = (offset * live["ppi"]) + start_offset;
+                    y = (offset * live["ppi"] * ecc) + start_offset;
                     if (y < height) {
                         if ((distance % 10) == 0){
                             arr = {};
-                            arr["y"] = Math.round(y);
+                            arr["y"] = y; //Math.round(y);
                             arr["distance"] = distance;
                             if (document.getElementById("rtl").checked){
                                 arr["text_y"] = Math.round(y) + parseInt(live["font-y-offset"]);
@@ -118,11 +119,11 @@
                             numbers.push(arr);
                         } else if ((distance % 5) == 0){
                             arr = {};
-                            arr["y"] = Math.round(y);
+                            arr["y"] = y; //Math.round(y);
                             medium.push(arr);
                         } else {
                             arr = {};
-                            arr["y"] = Math.round(y);
+                            arr["y"] = y; //Math.round(y);
                             small.push(arr);
                         };
                     };
@@ -281,7 +282,16 @@
                         <input type="radio" id="ltr" name="layout" value="ltr" onclick="updateImage()">
                         Ticks on Left
                     </label>
-                </fieldset> 
+                </fieldset>
+                <details>
+                    <summary>Printing Error Correction</summary>
+                    <label for="ecc-promised">Distance Promised</label>
+                    <input type="text" id="ecc-promised" name="ecc-promised" value="1" onkeyup="updateImage()">
+                    <small>Enter the distance any point should be after printing.</small>
+                    <label for="ecc-actual">Actual Distance</label>
+                    <input type="text" id="ecc-actual" name="ecc-actual" value="1" onkeyup="updateImage()">
+                    <small>Enter the measured distance of the same point.</small>
+                </details>
                 <details>
                     <summary>3-point estimation (Beta)</summary>
                     <label for="p1d">Point 1 Distance</label>
@@ -333,7 +343,7 @@
                 <button type="button" onclick="downloadImage()" class="secondary">Download</button>
                 <details>
                     <summary>Print Settings</summary>
-                    <small style="text-align:left;">Note: the browser will add a margin automatically that cannot be removed. The x and y positions are added to this default margin.</small>
+                    <small style="text-align:left;">Note: the browser will add a margin automatically that cannot be removed. The x and y positions are added to this default margin. Make sure to set margins to none in your print settings.</small>
                     <!-- <label for="print-width">Page Width</label>
                     <input type="text" id="print-width" name="print-width" value="8.5in">
                     <label for="print-height">Page Height</label>
