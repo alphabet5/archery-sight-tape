@@ -20,7 +20,7 @@ It can be accessed from https://sight-tape.alphabet5.dev
 
 ![](README_images/2022-06-22-12-52-56.png)
 
-Copy and paste the values (starting at 0.000) into the form at https://sight-tape.aphabet5.dev/
+Copy and paste the values (starting at 0.000) into the form at https://sight-tape.alphabet5.dev/
 
 
 ## Measuring your sight
